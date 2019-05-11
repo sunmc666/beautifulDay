@@ -25,7 +25,7 @@ export default {
       Dot: {},
       isAllowEdit: false,
       isAllowDrawLine: false,
-      isWarn: true,
+      isWarn: false,
       x: 0,
       y: 0,
       clientHeight: '',
@@ -126,7 +126,7 @@ export default {
     warn () {
       var cvs = document.getElementById('mystage')
       var ctx = cvs.getContext('2d')
-      var imgData = ctx.getImageData(this.Dot.x1 + cvs.width / 2, cvs.height - this.Dot.y1, 800, 400)
+      var imgData = ctx.getImageData(this.Dot.x + cvs.width / 2, cvs.height - this.Dot.y, 800, 400)
       var red = imgData.data[0]
       if (red === 255) {
         this.isWarn = true
